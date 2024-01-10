@@ -11,7 +11,7 @@
 
 <body>
     <h1>Hello, Factory!</h1>
-    <h1>Hello, Factory!</h1>
+    <h1>Hello, Seeder!</h1>
     <div class="container m-5">
         <div class="row">
             <div class="col-md-6 table-responsive-md">
