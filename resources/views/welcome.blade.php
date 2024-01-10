@@ -36,6 +36,7 @@
                 </table>
             </div>
             <div class="col-md-6 table-responsive-md">
+                <h1>City Table</h1>
                 <table class="table  table-bordered text-center caption-top">
                     <caption class="fw-bold text-primary">City</caption>
                     <thead>
