@@ -18,7 +18,8 @@ class UserFactory extends Factory
     {
         return [
             "name" => fake()->name(),
-            "email" => fake()->unique()->email()
+            "email" => fake()->unique()->email(),
+            "img" => fake()->imageUrl(100, 100, 'users', true)
         ];
     }
 }

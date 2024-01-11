@@ -10,8 +10,7 @@
 </head>
 
 <body>
-    <h1>Hello, Factory!</h1>
-    <h1>Hello, Factory!</h1>
+    <h1>Hello, Factory!</h1>    
     <div class="container m-5">
         <div class="row">
             <div class="col-md-6 table-responsive-md">
@@ -22,6 +21,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Image</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,6 +30,7 @@
                                 <td>{{ $a->id }}</td>
                                 <td>{{ $a->name }}</td>
                                 <td>{{ $a->email }}</td>
+                                <td><img src="{{ $a->img }}" class="img-fluid" alt="" srcset=""></td>
                             </tr>
                         @endforeach
                     </tbody>
