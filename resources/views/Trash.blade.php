@@ -15,6 +15,7 @@
     <div class="container m-5">
         <div class="row">
             <div class="col-md-6 table-responsive-md">
+                <h1>User Table</h1>
                 <table class="table  table-bordered text-center caption-top">
                     <caption class="fw-bold text-primary">User</caption>
                     <thead>
@@ -56,9 +57,9 @@
                             <tr>
                                 <td>{{ $b->id }}</td>
                                 <td>{{ $b->city }}</td>
-                                <td><a href="{{ url('delete?id=') . base64_encode($a->id) . '&type=' . base64_encode('restore') . '&modelName=' . base64_encode('City') }}"
+                                <td><a href="{{ url('delete?id=') . base64_encode($b->id) . '&type=' . base64_encode('restore') . '&modelName=' . base64_encode('City') }}"
                                         class="btn btn-primary">Restore</a>||<a
-                                        href="{{ url('delete?id=') . base64_encode($a->id) . '&type=' . base64_encode('delete') . '&modelName=' . base64_encode('City') }}"
+                                        href="{{ url('delete?id=') . base64_encode($b->id) . '&type=' . base64_encode('delete') . '&modelName=' . base64_encode('City') }}"
                                         class="btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach
