@@ -4,18 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Trash</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Hello, Factory!</h1>
-    <a href="{{ url('trash') }}" class="btn btn-primary">Trash</a>
+    <h1>Hello, Trash!</h1>
+    <a href="{{ url('/') }}" class="btn btn-primary">View</a>
     <div class="container m-5">
         <div class="row">
             <div class="col-md-6 table-responsive-md">
-                <h1>User Table</h1>
                 <table class="table  table-bordered text-center caption-top">
                     <caption class="fw-bold text-primary">User</caption>
                     <thead>
@@ -32,9 +31,10 @@
                                 <td>{{ $a->id }}</td>
                                 <td>{{ $a->name }}</td>
                                 <td>{{ $a->email }}</td>
-                                <td><a href="{{ url('delete?id=') . base64_encode($a->id) . '&type=' . base64_encode('trash') . '&modelName=' . base64_encode('User') }}"
-                                        class="btn btn-danger">Trash</a>
-                                </td>
+                                <td><a href="{{ url('delete?id=') . base64_encode($a->id) . '&type=' . base64_encode('restore') . '&modelName=' . base64_encode('User') }}"
+                                        class="btn btn-primary">Restore</a>||<a
+                                        href="{{ url('delete?id=') . base64_encode($a->id) . '&type=' . base64_encode('delete') . '&modelName=' . base64_encode('User') }}"
+                                        class="btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -56,9 +56,10 @@
                             <tr>
                                 <td>{{ $b->id }}</td>
                                 <td>{{ $b->city }}</td>
-                                <td><a href="{{ url('delete?id=') . base64_encode($b->id) . '&type=' . base64_encode('trash') . '&modelName=' . base64_encode('City') }}"
-                                        class="btn btn-danger">Trash</a>
-                                </td>
+                                <td><a href="{{ url('delete?id=') . base64_encode($a->id) . '&type=' . base64_encode('restore') . '&modelName=' . base64_encode('City') }}"
+                                        class="btn btn-primary">Restore</a>||<a
+                                        href="{{ url('delete?id=') . base64_encode($a->id) . '&type=' . base64_encode('delete') . '&modelName=' . base64_encode('City') }}"
+                                        class="btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach
                     </tbody>
