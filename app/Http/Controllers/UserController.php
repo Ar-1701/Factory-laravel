@@ -23,30 +23,24 @@ class UserController extends Controller
     }
     public function delete(Request $req)
     {
-        $id = base64_decode($req->id);
-        $type = base64_decode($req->type);
-        $modelName = 'App\Models\\' . base64_decode($req->modelName);
+
+        $id = $req->id;
+        // print_r($id);
+        $type = $req->type;
+        $modelName = 'App\Models\\' . $req->modelName;
+        // die;
         if (class_exists($modelName)) {
             $model = app($modelName);
             if (isset($id, $type) && $type == "trash") {
-                $check = $model->find($id);
-                if (isset($check)) {
-                    $check->delete();
-                }
+                $check = $model->whereIn('id', $id)->delete();
             }
             if (isset($id, $type) && $type == "restore") {
-                $check = $model->onlyTrashed()->find($id);
-                if (isset($check)) {
-                    $check->restore();
-                }
+                $check = $model->onlyTrashed()->whereIn('id', $id)->restore();
             }
             if (isset($id, $type) && $type == "delete") {
-                $check = $model->withTrashed()->find($id);
-                if (isset($check)) {
-                    $check->forceDelete();
-                }
+                $check = $model->withTrashed()->whereIn('id', $id)->forceDelete();
             }
         }
-        return redirect('/');
+        echo "delete";
     }
 }

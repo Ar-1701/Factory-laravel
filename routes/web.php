@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::controller(UserController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('trash', 'trash');
-    Route::get('delete', 'delete');
+    Route::post('delete', 'delete');
 });
